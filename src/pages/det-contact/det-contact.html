@@ -1,0 +1,67 @@
+<!--
+  Generated template for the DetContactPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ContactSet.lastname}}</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="showContactDelAlert()">
+          <ion-icon name="remove-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-label><b>Title:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{ContactSet.title}}</button></ion-label>
+    <div id = "showelement" [hidden] = "hideElement1" >
+      <ion-item>    
+        <ion-input  placeholder="Title" value= {{ContactSet.title}} [(ngModel)] = "ContactSet.title" clearInput ></ion-input>
+        <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+      </ion-item>
+    </div>
+    <ion-label><b>Contact nr:</b> <button (click) = "btnclick()" ion-item>{{ContactSet.contact_no}}</button></ion-label>
+    <ion-label><b>First name:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{ContactSet.firstname}}</button></ion-label>
+    <div id = "showelement" [hidden] = "hideElement1" >
+      <ion-item>    
+        <ion-input  placeholder="Firstname" value= {{ContactSet.firstname}} [(ngModel)] = "ContactSet.firstname" clearInput ></ion-input>
+        <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+      </ion-item>
+    </div>
+    <ion-label><b>Department:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{ContactSet.department}}</button></ion-label>
+    <div id = "showelement" [hidden] = "hideElement1" >
+      <ion-item>    
+        <ion-input  placeholder="department" value= {{ContactSet.department}} [(ngModel)] = "ContactSet.department" clearInput ></ion-input>
+        <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+      </ion-item>
+    </div>
+    <ion-label><b>Mobile:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{ContactSet.mobile}}</button></ion-label>
+    <div id = "showelement" [hidden] = "hideElement1" >
+      <ion-item>    
+        <ion-input  placeholder="Mobile" value= {{ContactSet.mobile}} [(ngModel)] = "ContactSet.mobile" clearInput ></ion-input>
+        <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+      </ion-item>
+    </div>
+    <ion-label><b>Fax:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{ContactSet.fax}}</button></ion-label>
+    <div id = "showelement" [hidden] = "hideElement1" >
+      <ion-item>    
+        <ion-input  placeholder="Fax" value= {{ContactSet.fax}} [(ngModel)] = "ContactSet.fax" clearInput ></ion-input>
+        <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+      </ion-item>
+    </div>
+    <ion-label><b>Phone:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{ContactSet.phone}}</button></ion-label>
+    <div id = "showelement" [hidden] = "hideElement1" >
+      <ion-item>    
+        <ion-input  placeholder="Phone" value= {{ContactSet.phone}} [(ngModel)] = "ContactSet.phone" clearInput ></ion-input>
+        <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+      </ion-item>
+    </div>
+    
+
+</ion-content>

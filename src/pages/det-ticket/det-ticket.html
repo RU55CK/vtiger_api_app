@@ -1,0 +1,147 @@
+<!--
+  Generated template for the DetTicketPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+<!-- --><script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{TicketSet.title}} </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="showDeleteAlert()">
+          <ion-icon name="remove-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+    
+  </ion-navbar> 
+
+</ion-header>
+
+
+<ion-content padding>
+    
+      
+<ion-list>
+      <ion-label><b>Title:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item >{{TicketSet.title}}</button></ion-label>
+      <div id = "showelement" [hidden] = "hideElement1" >
+          <ion-item>    
+            <ion-input  placeholder="Title" value= {{TicketSet.title}} [(ngModel)] = "TicketSet.title" clearInput ></ion-input>
+            <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+          </ion-item>
+      </div>
+      <ion-label><b>Ticket nr:</b> <button ion-item>{{TicketSet.ticket_no}}</button></ion-label>
+      <ion-label><b>Assigned to:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{TicketSet.last_name}}</button></ion-label>
+      <div id = "showelement" [hidden] = "hideElement1" >
+          <div item-content>
+            <ion-item>
+            <ng2-completer [inputClass]="['form-control']" (selected) = "onSelectedOrg($event)" [dataService]="dataService3" [minSearchLength]="3" name="assigned" placeholder = {{TicketSet.lastname}}></ng2-completer>    
+            <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+          </ion-item>
+          </div>
+      </div>
+      <ion-label><b>Contact name:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{TicketSet.lastname}}</button></ion-label>
+      <div id = "showelement" [hidden] = "hideElement1" >
+          <div item-content>
+            <ion-item>
+            <ng2-completer [inputClass]="['form-control']" (selected) = "onSelectedContact($event)" [dataService]="dataService" [minSearchLength]="3" name="contactname" placeholder = {{TicketSet.lastname}}></ng2-completer>    
+            <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+          </ion-item>
+          </div>
+      </div>
+
+      <ion-label><b>Account name:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{TicketSet.organisationname}}</button></ion-label>
+      <div id = "showelement" [hidden] = "hideElement1" >
+          <div item-content>
+            <ion-item>
+            <ng2-completer [inputClass]="['form-control']" (selected) = "onSelectedOrg($event)" [dataService]="dataService1" [minSearchLength]="3" name="orgname" placeholder = {{TicketSet.organisationname}}></ng2-completer>    
+            <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+          </ion-item>
+          </div>
+      </div>
+
+      <ion-label><b>Product name:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{TicketSet.productname}}</button></ion-label>
+      <div id = "showelement" [hidden] = "hideElement1" >
+          <div item-content>
+            <ion-item>
+            <ng2-completer [inputClass]="['form-control']" (selected) = "onSelectedProduct($event)" [dataService]="dataService2" [minSearchLength]="3" name="product" placeholder = {{TicketSet.productname}}></ng2-completer>    
+            <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+          </ion-item>
+          </div>
+      </div>
+
+      <ion-label><b>Status:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{TicketSet.status}}</button></ion-label>
+      <div id = "showelement" [hidden] = "hideElement1" >
+        <ion-item>
+          <ion-select [(ngModel)]="TicketSet.status" name="myStatus" placeholder = {{TicketSet.status}}>
+              <ion-option value="1">Open</ion-option>
+              <ion-option value="2">In progress</ion-option>
+              <ion-option value="3">Wait for response</ion-option>
+              <ion-option value="4">Closed</ion-option>
+            </ion-select>
+            <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+        </ion-item>  
+      </div>
+
+      <ion-label><b>Category:</b> <button [hidden] = "hideElement"  (click) = "btnclick()" ion-item>{{TicketSet.category}}</button></ion-label>
+      <div id = "showelement" [hidden] = "hideElement1" >
+      <ion-item>
+          <ion-select placeholder = {{TicketSet.category}} [(ngModel)]="TicketSet.category" name="myCategory" >
+              <ion-option value="1">Big Problem</ion-option>
+              <ion-option value="2">Small Problem</ion-option>
+              <ion-option value="3">Other Problem</ion-option>
+            </ion-select>
+            <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+      </ion-item>
+      </div>
+
+      
+      <ion-label><b>Priority:</b> <button [hidden] = "hideElement" (click) = "btnclick()" ion-item>{{TicketSet.priority}}</button></ion-label>
+      <div id = "showelement" [hidden] = "hideElement1" >
+      <ion-item>
+        <ion-select placeholder = {{TicketSet.priority}} [(ngModel)]="TicketSet.priority" name="myPriority">
+          <ion-option value="1">Low</ion-option>
+          <ion-option value="2">Normal</ion-option>
+          <ion-option value="3">High</ion-option>
+          <ion-option value="4">Urgent</ion-option>
+        </ion-select>
+      </ion-item>
+      </div>
+
+
+      <ion-label><b>Severity:</b> <button [hidden] = "hideElement" (click) = "btnclick()" ion-item>{{TicketSet.severity}}</button></ion-label>
+      <div id = "showelement" [hidden] = "hideElement1" >
+        <ion-item>
+          <ion-select placeholder = {{TicketSet.severity}} [(ngModel)]="TicketSet.severity" name="mySeverity">
+            <ion-option value="1">Minor</ion-option>
+            <ion-option value="2">Major</ion-option>
+            <ion-option value="3">Feature</ion-option>
+            <ion-option value="4">Critical</ion-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+
+      <ion-label><b>Description:</b> <button [hidden] = "hideElement" (click) = "btnclick()" ion-item>{{TicketSet.description}}</button></ion-label>
+      <div id = "showelement" [hidden] = "hideElement1" >
+        <ion-item>    
+          <ion-input  placeholder="Description" value= {{TicketSet.description}} [(ngModel)] = "TicketSet.description" clearInput ></ion-input>
+          <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+        </ion-item>
+     </div>
+
+      <ion-label><b>Solution:</b> <button [hidden] = "hideElement" (click) = "btnclick()" ion-item>{{TicketSet.solution}}</button></ion-label>
+      <div id = "showelement" [hidden] = "hideElement1" >
+        <ion-item>    
+          <ion-input  placeholder="Solution" value= {{TicketSet.solution}} [(ngModel)] = "TicketSet.solution" clearInput ></ion-input>
+          <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+        </ion-item>
+     </div>
+      
+    </ion-list> 
+     
+ </ion-content> 
+
+    
+ 

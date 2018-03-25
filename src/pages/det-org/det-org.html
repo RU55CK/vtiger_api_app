@@ -1,0 +1,44 @@
+<!--
+  Generated template for the DetOrgPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{OrgSet.accountname}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showOrgDelAlert()">
+        <ion-icon name="remove-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-label><b>Organisation nr:</b> <button ion-item>{{OrgSet.account_no}}</button></ion-label>
+  <ion-label><b>Account type:</b> <button [hidden] = "hideElement" (click) = "btnclick()" ion-item>{{OrgSet.account_type}}</button></ion-label>
+  <div id = "showelement" [hidden] = "hideElement1" >
+    <ion-item>    
+      <ion-input  placeholder="Acctype" value= {{OrgSet.account_type}} [(ngModel)] = "OrgSet.account_type" clearInput ></ion-input>
+      <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+    </ion-item>
+  </div>
+  <ion-label><b>Industry:</b> <button [hidden] = "hideElement" (click) = "btnclick()" ion-item>{{OrgSet.Industry}}</button></ion-label>
+  <div id = "showelement" [hidden] = "hideElement1" >
+    <ion-item>    
+      <ion-input  placeholder="Industry" value= {{OrgSet.Industry}} [(ngModel)] = "OrgSet.Industry" clearInput ></ion-input>
+      <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+    </ion-item>
+  </div>
+  <ion-label><b>Employees:</b> <button [hidden] = "hideElement" (click) = "btnclick()" ion-item>{{OrgSet.employees}}</button></ion-label>
+  <div id = "showelement" [hidden] = "hideElement1" >
+    <ion-item>    
+      <ion-input  placeholder="Employees" value= {{OrgSet.employees}} [(ngModel)] = "OrgSet.employees" clearInput ></ion-input>
+      <button ion-button clear color="dark" type="button" item-right (click)="editData()"> <ion-icon name="checkbox-outline"> </ion-icon> </button>
+    </ion-item>
+  </div>
+</ion-content>

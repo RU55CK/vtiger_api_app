@@ -1,0 +1,10 @@
+page-det-ticket {
+    .completer-input {
+        border: 0px;      
+      }
+      .completer-dropdown {
+        width: 90% !important;
+        position: relative !important;
+        z-index:99999;
+    }
+}

@@ -1,0 +1,132 @@
+<!--
+  Generated template for the AddTicketsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add new ticket</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addNewTicket()">
+        <ion-icon name="checkbox-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    
+  <ion-list>
+      <form name = "myForm">
+        <ion-item class="item-text-wrap">    
+          <ion-label>Title:</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.title" name="myLastname" required></ion-input>
+      </ion-item>
+      <!-- Error messages -->
+      <!-- <ion-item no-lines *ngIf="( addticket.get('title').hasError('minlength') || addticket.get('title').hasError('required') ) && addticket.get('title').touched">
+          
+          <div class="error" *ngIf="addticket.get('title').hasError('required') && addticket.get('title').touched">
+          Name is required
+          </div>
+          <div class="error" *ngIf="addticket.get('title').hasError('minlength') && addticket.get('title').touched">
+          Minimum of 4 characters
+          </div>
+          </ion-item> -->
+      <!-- End of error messages -->
+      <ion-item>
+          <ion-label>Assigned To:</ion-label>
+          <div item-content>
+            <ng2-completer [inputClass]="['form-control']" (selected) = "onSelectedUser($event)" [dataService]="dataService3" [minSearchLength]="3" name="assigned"></ng2-completer>    
+          </div>
+        </ion-item>
+          
+      <ion-item>
+        <ion-label>Contact name:</ion-label>
+        <div item-content>
+              <ng2-completer [inputClass]="['form-control']" (selected) = "onSelectedContact($event)" [dataService]="dataService" [minSearchLength]="3" name="title"></ng2-completer>    
+        </div>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Product name:</ion-label>
+        <div item-content>
+          <ng2-completer [inputClass]="['form-control']" (selected) = "onSelectedProduct($event)" [dataService]="dataService2" [minSearchLength]="3" name="product"></ng2-completer>    
+        </div>
+      </ion-item> 
+
+      <ion-item>
+        <ion-label>Organization name:</ion-label>
+        <div item-content>
+          <ng2-completer [inputClass]="['form-control']" (selected) = "onSelectedOrg($event)" [dataService]="dataService1" [minSearchLength]="3" name="org"></ng2-completer>    
+        </div>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Status:</ion-label>
+        <ion-select [(ngModel)]="userData.status" name="myStatus">
+          <ion-option value="1">Open</ion-option>
+          <ion-option value="2">In progress</ion-option>
+          <ion-option value="3">Wait for response</ion-option>
+          <ion-option value="4">Closed</ion-option>
+          
+        </ion-select>
+        
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Severity:</ion-label>
+        <ion-select [(ngModel)]="userData.severity" name="mySeverity">
+          <ion-option value="1">Minor</ion-option>
+          <ion-option value="2">Major</ion-option>
+          <ion-option value="3">Feature</ion-option>
+          <ion-option value="4">Critical</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Category:</ion-label>
+        <ion-select [(ngModel)]="userData.category" name="myCategory">
+          <ion-option value="1">Big Problem</ion-option>
+          <ion-option value="2">Small Problem</ion-option>
+          <ion-option value="3">Other Problem</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+      <ion-label>Priority:</ion-label>
+      <ion-select [(ngModel)]="userData.priority" name="myPriority">
+        <ion-option value="1">Low</ion-option>
+        <ion-option value="2">Normal</ion-option>
+        <ion-option value="3">High</ion-option>
+        <ion-option value="4">Urgent</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Days:</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.days" name="myDays"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hours:</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.hours" name="myHours"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Description:</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.description" name="myDesc"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Solution:</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.solution" name="mySol"></ion-input>
+    </ion-item>
+   </form>
+    </ion-list>
+ 
+</ion-content>

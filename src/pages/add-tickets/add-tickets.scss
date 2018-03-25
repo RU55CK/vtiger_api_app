@@ -1,0 +1,17 @@
+page-add-tickets {
+    .completer-input {
+      border: 0px;      
+    }
+    .completer-dropdown {
+      width: 100% !important;
+      position: relative !important;
+      z-index:99999;
+  }
+    .item-input .label-md {
+      color: #000;
+    }
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+      color: #000;
+    }
+   
+}
