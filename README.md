@@ -4,11 +4,11 @@ This application was made along with github.com/RU55CK/vtiger_api/
 
 ## Images
 
-![Login](login.png) 
-![Main](main.png) 
-![Create](create.png) 
-![Edit](edit.png) 
-![Delete](delete.png)
+![Login](login.PNG) 
+![Main](main.PNG) 
+![Create](create.PNG) 
+![Edit](edit.PNG) 
+![Delete](delete.PNG)
 
 This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
